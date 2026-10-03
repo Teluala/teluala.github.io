@@ -1,0 +1,72 @@
+/*!
+ * Copyright (c) 2026 The Teluala Authors
+ * SPDX-License-Identifier: MIT
+ */
+@import url('../styles.css');
+.brand-intro { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); align-items:end; gap:var(--space-2xl); padding-block:var(--space-3xl) var(--space-4xl); }
+.brand-intro h1 { font-size:clamp(3rem,5vw,4.8rem); }
+.brand-lead { max-width:55ch; }
+.brand-lead > p:first-child { font-size:var(--text-lg); }
+.brand-lead .text-link { margin-top:var(--space-lg); }
+.brand-concept { padding-block:var(--space-2xl); border-block:1px solid var(--color-rule); display:grid; grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr); align-items:center; gap:var(--space-2xl); }
+.brand-concept img { width:230px; }
+.brand-concept h2 { font-size:2rem; }
+.brand-concept p { color:var(--color-muted); margin-top:var(--space-md); }
+.brand-concept .official-tagline { color:var(--color-accent); }
+.brand-identity { padding-block:var(--space-3xl); }
+.brand-section-heading { max-width:65ch; margin-bottom:var(--space-xl); }
+.brand-section-heading p { margin-top:var(--space-lg); color:var(--color-muted); }
+.logo-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-lg); }
+.logo-surface { margin:0; padding:var(--space-lg); display:flex; flex-direction:column; gap:var(--space-xl); border:1px solid var(--color-rule); }
+.logo-surface img { width:80%; max-width:400px; margin:var(--space-xl) auto; }
+.logo-surface figcaption,.logo-surface a { font-size:var(--text-sm); }
+.logo-surface a { align-self:start; }
+.light { background:var(--color-light); color:var(--color-dark-ink); }
+.light a:focus-visible { outline-color:var(--color-dark-ink); }
+.dark { background:var(--color-deep); color:var(--color-ink); }
+.brand-rules { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-xl); margin-top:var(--space-xl); }
+.brand-rules h3 { font-size:var(--text-body); }
+.brand-rules p { color:var(--color-muted); margin-top:var(--space-sm); font-size:var(--text-sm); }
+.brand-downloads { border-top:1px solid var(--color-rule); padding-block:var(--space-3xl) var(--space-xl); }
+.asset-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-2xl) var(--space-lg); }
+.asset-card { min-width:0; }
+.asset-card-wide { grid-column:1/-1; }
+.asset-preview { height:240px; padding:var(--space-xl); display:flex; align-items:center; justify-content:center; gap:var(--space-lg); background:var(--color-light); }
+.asset-preview img { max-height:100%; width:auto; max-width:100%; object-fit:contain; }
+.asset-preview-light img { width:min(70%,540px); }
+.asset-preview-mark img { width:180px; }
+.asset-preview-icons img { width:35%; max-width:144px; }
+.asset-preview-banner { padding:0; height:auto; }
+.asset-preview-banner img { width:100%; }
+.asset-meta { display:flex; justify-content:space-between; align-items:start; flex-wrap:wrap; gap:var(--space-lg); padding-top:var(--space-lg); }
+.asset-kicker { font-size:var(--text-sm); color:var(--color-muted); margin-bottom:var(--space-sm); }
+.asset-meta h3 { font-size:var(--text-lg); }
+.asset-meta p:not(.asset-kicker) { color:var(--color-muted); font-size:var(--text-sm); margin-top:var(--space-sm); }
+.asset-actions { display:flex; align-items:center; gap:var(--space-sm) var(--space-md); flex-wrap:wrap; }
+.asset-actions a { display:inline-flex; align-items:center; min-height:44px; border-bottom:1px solid var(--color-rule); color:var(--color-accent); font-size:var(--text-sm); }
+.asset-card-download { background:var(--color-panel); padding:var(--space-xl); display:flex; align-items:start; flex-direction:column; gap:var(--space-xl); }
+.download-emblem img { width:72px; }
+.asset-card-download h3 { font-size:var(--text-lg); }
+.asset-card-download p:not(.asset-kicker) { color:var(--color-muted); margin-top:var(--space-md); }
+.asset-card-download .button { color:var(--color-accent); border-bottom:1px solid var(--color-rule); padding-block:var(--space-sm); }
+.brand-end { padding-block:var(--space-3xl); }
+.brand-end h2 { font-size:2rem; }
+.brand-end p { color:var(--color-muted); margin-block:var(--space-md); }
+@media (max-width:60rem) {
+ .brand-intro { padding-block:var(--space-2xl) var(--space-3xl); }
+ .brand-concept { grid-template-columns:minmax(0,.5fr) minmax(0,1fr); gap:var(--space-xl); }
+ .brand-concept img { width:170px; }
+}
+@media (max-width:40rem) {
+ .brand-intro,.brand-concept,.logo-pair,.brand-rules,.asset-grid { grid-template-columns:minmax(0,1fr); }
+ .brand-intro { gap:var(--space-xl); padding-block:var(--space-xl) var(--space-2xl); }
+ .brand-intro h1 { font-size:clamp(2.7rem,9vw,3.6rem); }
+ .brand-concept img { width:130px; }
+ .brand-identity,.brand-downloads { padding-block:var(--space-2xl); }
+ .logo-surface img { margin-block:var(--space-lg); }
+ .asset-card-wide { grid-column:auto; }
+ .asset-preview { height:200px; padding:var(--space-lg); }
+ .asset-preview-banner { height:auto; padding:0; }
+ .asset-card-download { padding:var(--space-lg); }
+ .brand-end { padding-block:var(--space-2xl); }
+}

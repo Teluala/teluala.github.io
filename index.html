@@ -1,0 +1,134 @@
+<!doctype html>
+<!-- Copyright (c) 2026 The Teluala Authors; SPDX-License-Identifier: MIT -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Teluala is a lightweight, high-performance, open-source globe rendering engine for the web — a focused alternative to CesiumJS with an emphasis on speed, small size, and ease of integration."
+    />
+    <meta name="theme-color" content="#0c1714" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Teluala" />
+    <meta property="og:title" content="Teluala.js — A lighter, faster globe engine for the web" />
+    <meta
+      property="og:description"
+      content="A lightweight, high-performance, open-source globe rendering engine for the web."
+    />
+    <meta property="og:url" content="https://teluala.github.io/" />
+    <meta
+      property="og:image"
+      content="https://teluala.github.io/assets/png/social-preview-dark-1200x630.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Teluala.js — a lighter, faster globe engine for the web" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Teluala.js — A lighter, faster globe engine for the web" />
+    <meta
+      name="twitter:description"
+      content="A lightweight, high-performance, open-source globe rendering engine for the web."
+    />
+    <meta
+      name="twitter:image"
+      content="https://teluala.github.io/assets/png/social-preview-dark-1200x630.png"
+    />
+    <link rel="canonical" href="https://teluala.github.io/" />
+    <link rel="icon" href="assets/web/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/web/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/web/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/web/site.webmanifest" />
+    <link rel="stylesheet" href="doc.css" />
+    <script type="module" src="logo-menu.js"></script>
+    <script type="module" src="copy-code.js"></script>
+    <script type="module" src="app.js"></script>
+    <title>Teluala.js — A lighter, faster globe engine for the web</title>
+  </head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+<a class="brand-logo" href="#top" aria-label="Teluala home. Right-click for brand assets." data-brand-menu data-brand-base=""><img src="assets/svg/logo-horizontal-white.svg" alt="Teluala" width="1526" height="436"></a>
+<nav aria-label="Main navigation"><a href="#install">Install</a><a href="#packages">Packages</a><a href="brand/">Brand</a><a href="https://github.com/teluala/teluala">GitHub ↗</a></nav>
+</header>
+<main id="main">
+<article class="doc" id="top">
+<p class="release">Teluala.js <span>/</span> 0.1.0-beta.1</p>
+<h1 id="a-lighter-faster-globe-engine-for-the-web">A lighter, faster globe engine for the web</h1>
+<p>Teluala is a small, framework-independent WebGPU engine for rendering a WGS84 ellipsoid and composing independently installed globe layers in the browser.</p>
+<blockquote><p><strong>Public beta: <code>0.1.0-beta.1</code>.</strong> APIs may change before the first stable release.</p></blockquote>
+<figure class="frame" aria-labelledby="frame-caption">
+<div class="demo-tabs" role="tablist" aria-label="Live demos"><button type="button" role="tab" data-demo="core" aria-selected="true">Core</button><button type="button" role="tab" data-demo="raster" aria-selected="false">Raster</button><button type="button" role="tab" data-demo="terrain" aria-selected="false">Terrain</button><button type="button" role="tab" data-demo="vector" aria-selected="false">Vector</button></div>
+<div class="viewport" id="viewport" role="tabpanel"><canvas id="globe" aria-label="Interactive WebGPU globe. Drag to pan and scroll to zoom."></canvas><div class="loading" id="loading" role="status">Initializing WebGPU…</div><div class="canvas-caption"><span id="demo-caption">WGS84 ellipsoid</span> <span id="demo-package">Core only · no basemap</span></div></div>
+<div class="controls"><div class="view-controls" id="view-controls" role="group" aria-label="Camera examples"><button type="button" class="selected" data-example="create" aria-pressed="true" disabled>Overview</button><button type="button" data-example="fly" aria-pressed="false" disabled>Fly to 0°, 0°</button><button type="button" data-example="orbit" aria-pressed="false" disabled>Orbit view</button></div><p id="pick-status" role="status">Click the globe to read coordinates.</p></div>
+<figcaption id="frame-caption"><span class="dot" aria-hidden="true"></span> <span>The real packages, running in this page. Drag to pan · Scroll to zoom · Shift-drag to orbit.</span> <span class="credit" id="demo-credit"></span></figcaption>
+</figure>
+<h2 id="at-a-glance">At a glance</h2>
+<div class="table"><table>
+<thead><tr><th scope="col">Topic</th><th scope="col">Teluala core</th></tr></thead>
+<tbody>
+<tr><td>Rendering</td><td>WebGPU, drawn on demand</td></tr>
+<tr><td>Scope</td><td>WGS84 ellipsoid, camera controls, ground picking, layer and plugin contracts</td></tr>
+<tr><td>Not included</td><td>Basemap, labels, terrain data, WebGL fallback</td></tr>
+<tr><td>Packaging</td><td>ESM-only TypeScript, no runtime dependencies</td></tr>
+<tr><td>License</td><td>MIT</td></tr>
+</tbody>
+</table></div>
+<h2 id="install">Install</h2>
+<p>npm packages: coming soon. Until then, build Teluala from the GitHub repository:</p>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-sh">git clone https://github.com/teluala/teluala.git
+cd teluala
+npm ci
+npm run build</code></pre></div>
+<p>Then add the built core to your application, giving the path to your clone:</p>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-sh">npm install ../teluala/packages/core</code></pre></div>
+<p>Add <code>../teluala/packages/terrain</code>, <code>raster</code>, or <code>vector</code> to the same command for the optional packages.</p>
+<p>Teluala requires a browser with WebGPU in a secure context (HTTPS or localhost). <code>@webgpu/types</code> is a type-only peer dependency; add it as a development dependency if your package manager does not install peers automatically.</p>
+<h2 id="quick-start">Quick start</h2>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-js">import { GlobeEngine } from 'teluala';
+
+const canvas = document.querySelector('#globe');
+if (!GlobeEngine.supported()) {
+  throw new Error('This browser does not support WebGPU.');
+}
+
+const globe = await GlobeEngine.create(canvas);
+globe.onPick = ({ lon, lat }) =&gt; console.log({ lon, lat });
+globe.flyTo({ lon: 0, lat: 0, range: 0.3 }, 1500);</code></pre></div>
+<p>You get an untextured ellipsoid without map imagery or labels. Drag to pan, scroll to zoom, and right-drag or Shift-drag to orbit. <code>create()</code> can still reject if GPU initialization fails, so handle that error in your UI. Call <code>globe.destroy()</code> when removing the canvas.</p>
+<h2 id="camera-and-drawing">Camera and drawing</h2>
+<p>The camera is a plain object with <code>lon</code>, <code>lat</code>, <code>range</code>, <code>heading</code>, <code>pitch</code>, and <code>roll</code>. Drawing is on demand: change the camera, then call <code>invalidate()</code>.</p>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-js">globe.camera.heading = Math.PI / 4;
+globe.camera.pitch = -Math.PI / 3;
+globe.invalidate();</code></pre></div>
+<p>Longitude and latitude are degrees; heading, pitch, and roll are radians. <code>range</code> is measured in world units, where one unit is the WGS84 semi-major axis (6,378,137 metres).</p>
+<h2 id="extend-with-layers">Extend with layers</h2>
+<p><code>GlobeLayer</code> is the rendering extension point. A layer creates its GPU resources once, receives a <code>FrameState</code>, and draws into the engine's shared render pass.</p>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-js">globe.attachLayer(layer);
+globe.detachLayer('example');</code></pre></div>
+<p>The core owns one shared GPU picking pass, so independently installed layers take part in picking without coupling to one another. Format-specific feature tables stay in their layer packages.</p>
+<h2 id="packages">Packages</h2>
+<div class="table"><table>
+<thead><tr><th scope="col">Package</th><th scope="col">Scope</th><th scope="col">Status</th></tr></thead>
+<tbody>
+<tr><td><code>teluala</code></td><td>Ellipsoid, camera, picking, and extension contracts</td><td>Public beta</td></tr>
+<tr><td><code>@teluala/terrain</code></td><td>Elevation sources and shared height sampling</td><td>Public beta</td></tr>
+<tr><td><code>@teluala/raster</code></td><td>Raster imagery</td><td>Public beta</td></tr>
+<tr><td><code>@teluala/vector</code></td><td>Mapbox Vector Tiles</td><td>Public beta</td></tr>
+</tbody>
+</table></div>
+<p>The first beta includes core, terrain, raster, and vector. APIs may change between beta releases.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/teluala/teluala">Source on GitHub</a></li>
+<li><a href="https://github.com/teluala/teluala/tree/main/packages/core#quick-start">Full setup guide</a></li>
+<li><a href="https://github.com/teluala/teluala/issues">Issues</a></li>
+<li><a href="brand/">Brand assets</a> — or right-click the logo to download the brand kit.</li>
+</ul>
+</article>
+<p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+</main>
+<footer><p>© 2026 The Teluala Authors · <a href="LICENSE">Code: MIT</a></p><nav aria-label="Footer navigation"><a href="https://github.com/teluala/teluala">Source ↗</a><a href="#top">Back to top ↑</a></nav></footer>
+<noscript><p class="no-script">The interactive demo requires JavaScript. The rest of this page does not.</p></noscript>
+</body>
+</html>
