@@ -53,10 +53,10 @@
 </header>
 <main id="main">
 <article class="doc" id="top">
-<p class="release">Teluala.js <span>/</span> 0.1.0-beta.1</p>
+<p class="release">Teluala.js <span>/</span> 0.1.0-beta.3</p>
 <h1 id="a-lighter-faster-globe-engine-for-the-web">A lighter, faster globe engine for the web</h1>
 <p>Teluala is a small, framework-independent WebGPU engine for rendering a WGS84 ellipsoid and composing independently installed globe layers in the browser.</p>
-<blockquote><p><strong>Public beta: <code>0.1.0-beta.1</code>.</strong> APIs may change before the first stable release.</p></blockquote>
+<blockquote><p><strong>Public beta: <code>0.1.0-beta.3</code>.</strong> APIs may change before the first stable release.</p></blockquote>
 <figure class="frame" aria-labelledby="frame-caption">
 <div class="demo-tabs" role="tablist" aria-label="Live demos"><button type="button" role="tab" data-demo="core" aria-selected="true">Core</button><button type="button" role="tab" data-demo="raster" aria-selected="false">Raster</button><button type="button" role="tab" data-demo="terrain" aria-selected="false">Terrain</button><button type="button" role="tab" data-demo="vector" aria-selected="false">Vector</button></div>
 <div class="viewport" id="viewport" role="tabpanel"><canvas id="globe" aria-label="Interactive WebGPU globe. Drag to pan and scroll to zoom."></canvas><div class="loading" id="loading" role="status">Initializing WebGPU…</div><div class="canvas-caption"><span id="demo-caption">WGS84 ellipsoid</span> <span id="demo-package">Core only · no basemap</span></div></div>
@@ -75,14 +75,10 @@
 </tbody>
 </table></div>
 <h2 id="install">Install</h2>
-<p>npm packages: coming soon. Until then, build Teluala from the GitHub repository:</p>
-<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-sh">git clone https://github.com/teluala/teluala.git
-cd teluala
-npm ci
-npm run build</code></pre></div>
-<p>Then add the built core to your application, giving the path to your clone:</p>
-<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-sh">npm install ../teluala/packages/core</code></pre></div>
-<p>Add <code>../teluala/packages/terrain</code>, <code>raster</code>, or <code>vector</code> to the same command for the optional packages.</p>
+<p>Install the public beta from npm:</p>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-sh">npm install teluala@0.1.0-beta.3</code></pre></div>
+<p>Install the optional packages you need alongside the core:</p>
+<div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-sh">npm install @teluala/terrain@0.1.0-beta.3 @teluala/raster@0.1.0-beta.3 @teluala/vector@0.1.0-beta.3</code></pre></div>
 <p>Teluala requires a browser with WebGPU in a secure context (HTTPS or localhost). <code>@webgpu/types</code> is a type-only peer dependency; add it as a development dependency if your package manager does not install peers automatically.</p>
 <h2 id="quick-start">Quick start</h2>
 <div class="code"><button type="button" class="copy" hidden>Copy</button><pre><code class="language-js">import { GlobeEngine } from 'teluala';
